@@ -2,12 +2,12 @@
 
 import React from "react";
 
-const LoadingPage = () => {
+const Loading = () => {
   return (
-    <div className="h-screen flex flex-col justify-center items-center bg-slate-50 text-gray-900">
-      <h1 className="text-4xl font-medium text-gray-500">Loading...</h1>
+    <div className="h-full flex justify-center items-center">
+      <div className="animate-spin h-10 w-10 border-4 border-green-500 rounded-full border-t-transparent"></div>
     </div>
   );
-}
+};
 
-export default LoadingPage;
+export default Loading;

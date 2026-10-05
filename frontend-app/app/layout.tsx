@@ -8,7 +8,11 @@ export const metadata: Metadata = {
   description: 'RAGアーキテクチャ基礎',
 };
 
-export default function RootLayout({ children,}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="ja">
       <body className={inter.className}>{children}</body>
