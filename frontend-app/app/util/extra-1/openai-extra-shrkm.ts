@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { AzureKeyCredential, OpenAIClient } from '@azure/openai';
 
 export const getChatCompletions = async (

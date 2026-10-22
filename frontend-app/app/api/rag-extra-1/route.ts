@@ -29,7 +29,7 @@ export const POST = async (req: NextRequest) => {
     let systemMessage =
       'あなたが持っている知識は使ってはいけません。 "検索結果" と画像の情報のみを使い回答しなさい。わからない場合は「分かりません。」と回答しなさい。';
     systemMessage += '# 検索結果\n';
-    let images = [];
+    const images = [];
     for (const result of cosmosItems) {
       // ループ番号を追加
       systemMessage +=
@@ -48,9 +48,10 @@ export const POST = async (req: NextRequest) => {
 
     // OpenAI へのリクエスト
     const result = await getChatCompletions(systemMessage, message, images);
-    let aiMessage = result[0].message.content;
+    const aiMessage = result[0].message.content;
 
     return NextResponse.json({ aiMessage }, { status: 200 });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     return NextResponse.json({ aiMessage: error.message }, { status: 500 });
   }
